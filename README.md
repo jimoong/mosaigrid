@@ -1,6 +1,6 @@
 # MosaiGrid
 
-TODO: Write a project description
+Dynamic photo grid
 
 ## Installation
 
@@ -8,7 +8,28 @@ TODO: Describe the installation process
 
 ## Usage
 
-TODO: Write usage instructions
+CSS inside of <head>
+```html
+<link href="css/grid.css" media="all" rel="stylesheet" type="text/css"/>
+```
+Javascript right before close <body>
+```html
+<script src="js/grid.js" type="text/javascript"></script>
+```
+
+And initiate it like this
+```javascript
+var grid = new Grid({
+	element: '#photos',
+	columns: 6,
+	margin: 2
+});
+
+window.addEventListener('load', function() {
+	grid.draw();
+}, false);
+```
+
 
 ## Contributing
 
