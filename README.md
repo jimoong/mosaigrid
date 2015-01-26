@@ -8,16 +8,16 @@ TODO: Describe the installation process
 
 ## Usage
 
-CSS inside of <head>
+CSS inside of head.
 ```html
 <link href="css/grid.css" media="all" rel="stylesheet" type="text/css"/>
 ```
-Javascript right before close <body>
+Javascript right before close body tag.
 ```html
 <script src="js/grid.js" type="text/javascript"></script>
 ```
 
-And initiate it like this
+And initiate it like this.
 ```javascript
 var grid = new Grid({
 	element: '#photos',
