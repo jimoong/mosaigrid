@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Grid</title>
+		<link href="css/grid.css" media="all" rel="stylesheet" type="text/css"/>
+		<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="photos">
+			<img src="samples/01.jpeg">
+			<img src="samples/02.jpeg">
+			<img src="samples/03.jpeg">
+			<img src="samples/04.jpeg">
+			<img src="samples/05.jpeg">
+			<img src="samples/06.jpeg">
+			<img src="samples/07.jpeg">
+			<img src="samples/08.jpeg">
+			<img src="samples/09.jpeg">
+			<img src="samples/10.jpeg">
+			<img src="samples/11.jpeg">
+			<img src="samples/12.jpeg">
+			<img src="samples/13.jpeg">
+			<img src="samples/14.jpeg">
+			<img src="samples/15.jpeg">
+			<img src="samples/16.jpeg">
+			<img src="samples/17.jpeg">
+			<img src="samples/18.jpeg">
+			<img src="samples/19.jpeg">
+			<img src="samples/20.jpeg">
+			<img src="samples/21.jpeg">
+			<img src="samples/22.jpeg">
+			<img src="samples/23.jpeg">
+			<img src="samples/24.jpeg">
+			<img src="samples/25.jpeg">
+			<img src="samples/26.jpeg">
+			<img src="samples/27.jpeg">
+			<img src="samples/28.jpeg">
+			<img src="samples/29.jpeg">
+			<img src="samples/30.jpeg">
+			<img src="samples/31.jpeg">
+			<img src="samples/32.jpeg">
+			<img src="samples/33.jpeg">
+			<img src="samples/34.jpeg">
+			<img src="samples/35.jpeg">
+			<img src="samples/36.jpeg">
+			<img src="samples/37.jpeg">
+			<img src="samples/01.jpeg">
+			<img src="samples/02.jpeg">
+			<img src="samples/03.jpeg">
+			<img src="samples/04.jpeg">
+			<img src="samples/05.jpeg">
+			<img src="samples/06.jpeg">
+			<img src="samples/07.jpeg">
+			<img src="samples/08.jpeg">
+			<img src="samples/09.jpeg">
+			<img src="samples/10.jpeg">
+			<img src="samples/11.jpeg">
+		</div>
+
+		<script src="js/grid.js" type="text/javascript"></script>
+		<script>
+		var grid = new Grid({
+			element: '#photos',
+			columns: 6,
+			margin: 2
+		});
+
+		window.addEventListener('load', function() {
+			grid.items[5].spanX = grid.items[5].spanY = 2;
+			grid.draw();
+		}, false);
+		</script>
+	</body>
+</html>

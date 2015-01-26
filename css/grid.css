@@ -1,0 +1,38 @@
+.grid-item {
+	position: relative;
+	float: left;
+	background-position: 50% 50%;
+	background-size: cover;
+	-webkit-transform: translate3d(0, 0, 0.1px);
+	-webkit-transition: top .6s, left .6s, width .6s, height .6s;
+	-webkit-user-select: none;
+}
+.grid-item-controls {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	opacity: 0;
+}
+.grid-item:hover .grid-item-controls {
+	opacity: 1;
+}
+.grid-item-controls button {
+	-webkit-appearance: none;
+	border: none;
+	background-color: #fff;
+	color: #333;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	margin-right: 4px;
+}
+.grid-item-controls button:focus {
+	outline: none;
+}
+.grid-item-controls button:active {
+	background-color: #333;
+	color: #fff;
+}
