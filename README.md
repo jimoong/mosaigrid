@@ -30,6 +30,8 @@ window.addEventListener('load', function() {
 }, false);
 ```
 
+## Demo
+http://codepen.io/jimoong/pen/LELaQE
 
 ## Contributing
 
