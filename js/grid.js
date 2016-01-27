@@ -80,8 +80,6 @@ var Grid = function(options) {
 	this.startOnWindowLoad = options.startOnWindowLoad ? options.startOnWindowLoad : false; //start on window onload event or not
 	this.relativeHeight = options.relativeHeight ? options.relativeHeight : false; //set items height relative to the container height
 
-	console.log(this.container);
-
 	var that = this;
 
 	var Dragger = function() {
@@ -168,15 +166,38 @@ var Grid = function(options) {
 		item.element.style.cssText = css;
 	}
 
+	function _resize() {
+		if(window.addEventListener) {
+			window.addEventListener('resize', that.update);
+		} else if(window.attachEvent){
+			window.attachEvent('onresize', that.update);
+		}
+	}
+
+	function _load(){
+		if(window.addEventListener) {
+			window.addEventListener('load', _init, false);
+		} else if(window.attachEvent){
+			window.attachEvent('onload', _init, false);
+		}
+	}
+
 	function _init() {
 		that.unit = Math.floor((that.container.offsetWidth - that.margin * (that.columns + 1)) / that.columns);
 		[].slice.call(that.container.querySelectorAll(that.itemTag)).forEach(_itemize);
+		_resize();
 	}
 
-	that.startOnWindowLoad ? window.addEventListener('load', _init, false) : _init();
+	that.update = function(){
+		that.unit = Math.floor((that.container.offsetWidth - that.margin * (that.columns + 1)) / that.columns);
+		that.draw();
+	}
+
+	that.startOnWindowLoad ? _load() : _init();
 
 };
-Grid.prototype.update = function() {
+
+Grid.prototype.drawGrid = function() {
 	var count = 0;
 	this.items.forEach(function(item) {
 		count += item.spanX * item.spanY;
@@ -251,7 +272,7 @@ Grid.prototype.drawItem = function(item, position) {
 Grid.prototype.draw = function(target) {
 	var that = this;
 
-	this.update();
+	this.drawGrid();
 
 	if (target && target.x + target.spanX >= this.columns) {
 		var targetPosition = {
