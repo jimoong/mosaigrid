@@ -7,6 +7,9 @@
 	-webkit-transition: top .6s, left .6s, width .6s, height .6s;
 	-webkit-user-select: none;
 }
+.grid-item img {
+	display: none;
+}
 .grid-item-controls {
 	position: absolute;
 	top: 4px;
