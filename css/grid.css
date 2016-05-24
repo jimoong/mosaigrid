@@ -7,11 +7,21 @@
 	-webkit-transition: top .6s, left .6s, width .6s, height .6s;
 	-webkit-user-select: none;
 }
+.grid-item-remove {
+	position: relative;
+	float: right;
+	background-position: 50% 50%;
+	background-size: cover;
+	-webkit-transform: translate3d(0, 0, 0.1px);
+	-webkit-transition: top .6s, left .6s, width .6s, height .6s;
+	-webkit-user-select: none;
+}
 .grid-item-controls {
 	position: absolute;
 	top: 4px;
 	left: 4px;
 	opacity: 0;
+	width: 98%;
 }
 .grid-item:hover .grid-item-controls {
 	opacity: 1;
