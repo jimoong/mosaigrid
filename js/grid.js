@@ -152,14 +152,12 @@ var Grid = function(options) {
 
 		that.draw(this);
 	};
-	Item.prototype.remove = function() {
 
+	Item.prototype.remove = function() {
 		this.element.parentElement.removeChild(this.element);
 		var nIndex = this.index;
-		// alert("index "+this.index);
 		if (nIndex > -1) {
     		that.items.splice(nIndex, 1);
-    		// that.items.splice(2, 1);
 		}
 		that.updateIndex();
 		that.draw(null);
@@ -185,12 +183,8 @@ var Grid = function(options) {
 Grid.prototype.update = function() {
 	var count = 0;
 	this.items.forEach(function(item) {
-		// alert("items css"+ item.element.style.cssText);
 		count += item.spanX * item.spanY;
 	});
-	// alert("count"+count);
-
-	// alert("length"+this.items.length);
 
 	for (var y = 0; y < Math.ceil(count / this.columns); y++) {
 		for (var x = 0; x < this.columns; x++) {
@@ -282,13 +276,9 @@ Grid.prototype.draw = function(target) {
 };
 
 Grid.prototype.updateIndex = function() {
-	// alert("arribo");
-	// alert("length "+this.items.length);
 	var newIndex = 0;
 	this.items.forEach(function(item) {
-		// alert("cIndex " +item.index);
 		item.index = newIndex;
-		// alert("nIndex " +item.index);
 		newIndex++;
 	});
 };
